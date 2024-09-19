@@ -13,7 +13,12 @@ class Counter extends Component {
   };
 
   decrement = () => {
-    this.setState((prevState) => ({ currentValue: prevState.currentValue - 1 }));
+    this.setState((prevState) => {
+      if (prevState.currentValue > 0) {
+        return { currentValue: prevState.currentValue - 1 };
+      }
+      return prevState;
+    });
   };
 
   render() {
