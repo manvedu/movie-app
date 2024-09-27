@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './SearchForm.css';
 
 class SearchForm extends Component {
   constructor(props) {
@@ -21,69 +22,18 @@ class SearchForm extends Component {
   };
 
   render() {
-    const searchContainerStyle = {
-      display: 'flex',
-      alignItems: 'center',
-      gap: '10px',
-      width: '713px',
-      position: 'absolute',
-      top: '20%',
-      left: '50%',
-      transform: 'translateX(-50%)',
-    };
-
-    const textStyle = {
-      fontFamily: 'Montserrat',
-      fontSize: '20px',
-      fontWeight: 400,
-      lineHeight: '24.38px',
-      textAlign: 'left',
-      color: 'white',
-      opacity: 0.3,
-      color: 'white',
-    };
-
-    const inputSearchStyle = {
-      ...textStyle,
-      flex: 1,
-      background: '#323232CC',
-      border: '1px solid #ccc',
-      padding: '10px',
-      height: '57px',
-      opacity: 0.3,
-      boxSizing: 'border-box',
-      borderRadius: '5px'
-    };
-
-    const buttonStyle = {
-      ...textStyle,
-      background: '#F65261',
-      color: 'white',
-      border: 'none',
-      cursor: 'pointer',
-      width: '233px',
-      height: '57px',
-      position: 'relative',
-      boxSizing: 'border-box',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      opacity: 1,
-      padding: '10px 0',
-      borderRadius: '5px'
-    };
 
     return (
-      <div style={searchContainerStyle}>
+      <div className="search-container">
         <input
           type="text"
           placeholder={this.props.initialQuery || "What do you want to watch?"}
           value={this.state.query}
           onChange={this.handleInputChange}
           onKeyDown={this.handleKeyDown}
-          style={inputSearchStyle}
+          className="input-search text-style"
         />
-        <button onClick={this.handleSearch} style={buttonStyle}>Search</button>
+        <button onClick={this.handleSearch} className="button-style text-style">Search</button>
       </div>
     );
   }

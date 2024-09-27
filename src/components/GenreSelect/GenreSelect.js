@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './GenreSelect.css';
 
 class GenreSelect extends Component {
   constructor(props) {
@@ -14,40 +15,14 @@ class GenreSelect extends Component {
   };
 
   render() {
-    const navbarStyle = {
-      display: 'flex',
-      justifyContent: 'flex-start',
-      alignItems: 'center',
-      padding: '10px',
-      backgroundColor: '#232323',
-    };
-
-    const textContainerStyle = {
-      display: 'flex',
-      gap: '10px',
-      marginLeft: '35px',
-    };
-
-    const textStyle = {
-      padding: '10px 0',
-      color: 'white',
-      textTransform: 'uppercase',
-    };
-
-    const selectedTextStyle = {
-      ...textStyle,
-      // TODO IDK how to get the underline continue under all the options
-      borderBottom: '2px solid #F65261',
-    };
-
     return (
-      <div style={navbarStyle}>
-        <div style={textContainerStyle}>
+      <div className="navbar">
+        <div className="text-container">
           {this.props.genres.map((genre) => (
             <span
               key={genre}
               onClick={() => this.handleSelect(genre)}
-              style={this.state.selectedGenre === genre ? selectedTextStyle : textStyle}
+              className={this.state.selectedGenre === genre ? 'selected-text' : 'text'}
             >
               {genre}
             </span>
