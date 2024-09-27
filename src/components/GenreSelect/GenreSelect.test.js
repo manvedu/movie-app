@@ -27,7 +27,7 @@ describe('GenreSelect Component', () => {
   test('highlights the selected genre passed in props', () => {
     renderGenreSelect();
     const selectedGenre = screen.getByText(genres[indexInitialValue]);
-    expect(selectedGenre).toHaveStyle('border-bottom: 2px solid #F65261');
+    expect(selectedGenre).toHaveClass('selected-text');
   });
 
   test('calls onSelect callback with selected genre on click', () => {
