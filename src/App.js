@@ -1,5 +1,5 @@
 import './App.css';
-import SearchForm from './components/SearchForm';
+import SearchForm from './components/SearchForm/SearchForm';
 import Counter from './components/Counter/Counter';
 import GenreSelect from './components/GenreSelect';
 
