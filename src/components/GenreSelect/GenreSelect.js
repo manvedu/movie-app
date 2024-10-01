@@ -20,6 +20,7 @@ class GenreSelect extends Component {
         <div className="text-container">
           {this.props.genres.map((genre) => (
             <span
+              id={`genre-${genre.toLowerCase()}`}
               key={genre}
               onClick={() => this.handleSelect(genre)}
               className={this.state.selectedGenre === genre ? 'selected-text' : 'text'}

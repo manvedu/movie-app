@@ -21,6 +21,8 @@ describe('GenreSelect Component', () => {
     renderGenreSelect();
     genres.forEach((genre) => {
       expect(screen.getByText(genre)).toBeInTheDocument();
+      const value = document.getElementById(`genre-${genre.toLowerCase()}`);
+      expect(value).toHaveTextContent(genre);
     });
   });
 
