@@ -1,7 +1,7 @@
 import './App.css';
-import SearchForm from './components/SearchForm';
-import Counter from './components/Counter';
-import GenreSelect from './components/GenreSelect';
+import SearchForm from './components/SearchForm/SearchForm';
+import Counter from './components/Counter/Counter';
+import GenreSelect from './components/GenreSelect/GenreSelect';
 
 function App() {
   const handleGenreSelect = (genre) => {
