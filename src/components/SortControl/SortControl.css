@@ -1,0 +1,16 @@
+/* SortControl.css */
+
+.sort-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+label {
+  font-size: 16px;
+}
+
+select {
+  padding: 5px;
+  font-size: 16px;
+}
