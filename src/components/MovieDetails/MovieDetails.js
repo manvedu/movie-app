@@ -4,13 +4,13 @@ import './MovieDetails.css';
 
 const MovieDetails = ({ movie }) => (
   <div className="movie-details">
-    <img src={movie.imageUrl} alt={movie.name} className="movie-poster" />
+    <img src={movie.imageUrl} alt={movie.name} className="movie-poster" data-testid="movie-poster" />
     <div className="movie-info">
-      <h2>{movie.name}</h2>
-      <p><strong>Release Year:</strong> {movie.releaseYear}</p>
-      <p><strong>Rating:</strong> {movie.rating}</p>
-      <p><strong>Duration:</strong> {movie.duration}</p>
-      <p>{movie.description}</p>
+      <h2 data-testid="movie-name">{movie.name}</h2>
+      <p data-testid="movie-release-year"><strong>Release Year:</strong> {movie.releaseYear}</p>
+      <p data-testid="movie-rating"><strong>Rating:</strong> {movie.rating}</p>
+      <p data-testid="movie-duration"><strong>Duration:</strong> {movie.duration}</p>
+      <p data-testid="movie-description">{movie.description}</p>
     </div>
   </div>
 );
