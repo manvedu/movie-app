@@ -2,7 +2,7 @@ import React from 'react';
 import GenreSelect from './GenreSelect';
 
 export default {
-  title: 'GenreSelect',
+  title: 'Components/GenreSelect',
   component: GenreSelect,
 };
 
