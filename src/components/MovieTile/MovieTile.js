@@ -5,29 +5,26 @@ import './MovieTile.css';
 const MovieTile = ({ movie, onClick }) => {
   const [menuVisible, setMenuVisible] = useState(false);
 
-  const handleMenuToggle = () => {
+  const handleMenuToggle = (e) => {
+    e.stopPropagation();
     setMenuVisible(!menuVisible);
   };
 
-  const handleMenuOptionClick = (option) => {
-    alert(`${option} clicked`);
-    setMenuVisible(false);
-  };
-
   return (
-    <div className="movie-tile" onClick={onClick}>
-      <img src={movie.imageUrl} alt={movie.name} className="movie-image" />
+    <div className="movie-tile" onClick={onClick} data-testid="movie-tile">
+      <img src={movie.imageUrl} alt={movie.name} className="movie-image" data-testid="movie-image" />
       <div className="movie-info">
-        <h3>{movie.name} ({movie.releaseYear})</h3>
-        <p>{movie.genres.join(', ')}</p>
+        <h3 data-testid="movie-name">{movie.name}</h3>
+        <p data-testid="movie-release-year">{movie.releaseYear}</p>
+        <p data-testid="movie-genres">{movie.genres.join(', ')}</p>
       </div>
       <div className="movie-options">
-        <button className="menu-button" onClick={handleMenuToggle}>...</button>
+        <button className="menu-button" onClick={handleMenuToggle} data-testid="menu-button">...</button>
         {menuVisible && (
-          <div className="context-menu">
+          <div className="context-menu" data-testid="context-menu">
             <ul>
-              <li onClick={() => handleMenuOptionClick('Edit')}>Edit</li>
-              <li onClick={() => handleMenuOptionClick('Delete')}>Delete</li>
+              <li data-testid="edit-option">Edit</li>
+              <li data-testid="delete-option">Delete</li>
             </ul>
           </div>
         )}
