@@ -11,21 +11,22 @@ export default {
 const Template = (args) => <MovieForm {...args} />;
 const DialogTemplate = (args) => <Dialog {...args} />;
 
+const initialMovieData = {
+  name: 'Inception',
+  releaseYear: 2010,
+  rating: 'PG-13',
+  duration: '2h 28m',
+  description: 'A mind-bending thriller about dream invasion.',
+};
+
 export const AddMovie = Template.bind({});
 AddMovie.args = { onSubmit: (data) => alert(JSON.stringify(data)) };
 
 export const EditMovie = Template.bind({});
 EditMovie.args = {
-  initialMovie: {
-    name: 'Inception',
-    releaseYear: 2010,
-    rating: 'PG-13',
-    duration: '2h 28m',
-    description: 'A mind-bending thriller about dream invasion.',
-  },
+  initialMovie: initialMovieData,
   onSubmit: (data) => alert(JSON.stringify(data)),
 };
-
 
 //Add composition to use Dialog Component
 
@@ -42,13 +43,7 @@ EditMovieDialog.args = {
   onClose: () => alert("Dialog closed"),
   children: (
     <MovieForm
-      initialMovie={{
-        name: 'Inception',
-        releaseYear: 2010,
-        rating: 'PG-13',
-        duration: '2h 28m',
-        description: 'A mind-bending thriller about dream invasion.',
-      }}
+      initialMovie={initialMovieData}
       onSubmit={(data) => alert(`Submitted: ${JSON.stringify(data)}`)}
     />
   ),
