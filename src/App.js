@@ -1,11 +1,33 @@
 import './App.css';
+/*
 import React, { useState } from 'react';
 import SearchForm from './components/SearchForm/SearchForm';
 import Counter from './components/Counter/Counter';
 import GenreSelect from './components/GenreSelect/GenreSelect';
 import MovieTile from './components/MovieTile/MovieTile';
 import MovieDetails from './components/MovieDetails/MovieDetails';
+*/
 
+import React from 'react';
+import MovieListPage from './components/MovieListPage/MovieListPage';
+
+function App() {
+  return (
+    <div className="App">
+      <MovieListPage />
+    </div>
+  );
+}
+
+export default App;
+
+
+
+
+
+
+
+/*
 function App() {
   const [selectedMovie, setSelectedMovie] = useState(null);
 
@@ -102,3 +124,4 @@ function App() {
 
 export default App;
 
+*/
